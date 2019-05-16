@@ -12,6 +12,7 @@ export class NavComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
+  title: 'Ciudadano 2019';
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 }

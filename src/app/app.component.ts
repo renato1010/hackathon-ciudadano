@@ -13,6 +13,7 @@ export class AppComponent {
   authState: Observable<AuthState>;
   estaLogeado: Observable<boolean>;
   usuario: Observable<any>;
+  title: 'Ciudadano 2019';
 
   constructor(private amplifyService: AmplifyService) {
     this.authState = amplifyService.authStateChange$;
