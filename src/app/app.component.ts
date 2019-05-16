@@ -13,11 +13,10 @@ export class AppComponent {
   authState: Observable<AuthState>;
   estaLogeado: Observable<boolean>;
   usuario: Observable<any>;
-  title: 'Ciudadano 2019';
 
   constructor(private amplifyService: AmplifyService) {
     this.authState = amplifyService.authStateChange$;
     this.estaLogeado = this.authState.pipe(map(authState => authState.state === 'signedIn'));
-    this.usuario = this.authState.pipe(map(authState => authState.user));
+    this.usuario = this.authState.pipe(map(authState => authState.user || null));
   }
 }
