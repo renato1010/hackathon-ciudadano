@@ -1,0 +1,13 @@
+// import material theming
+
+@import '~@angular/material/theming';
+// copy palettes
+$app-primario: mat-palette($mat-indigo);
+$app-acento: mat-palette($mat-pink, A200, A100, A400);
+$app-advertencia: mat-palette($mat-orange);
+
+// Sass variables
+
+$primario: mat-color($app-primario);
+$acento: mat-color($app-acento);
+$advertencia: mat-color($app-advertencia);

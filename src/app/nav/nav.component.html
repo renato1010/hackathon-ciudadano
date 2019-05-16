@@ -7,11 +7,11 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)"
   >
-    <mat-toolbar>Enlaces</mat-toolbar>
+    <mat-toolbar>Secciones</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Enalce 1</a>
-      <a mat-list-item href="#">Enalce 2</a>
-      <a mat-list-item href="#">Enalce 3</a>
+      <a mat-list-item routerLink="/inicio" href="#">Inicio</a>
+      <a mat-list-item routerLink="/agregar-contenido" href="#">Enalce 2</a>
+      <a mat-list-item routerLink="/info" href="#">Enalce 3</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,7 +25,9 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>{{ title }}</span>
+      <div routerLink="/inicio" class="toolbar-title">
+        <p class="toolbar-title-text">{{ title }}</p>
+      </div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

@@ -4,7 +4,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 
 import { NavComponent } from './nav.component';
-import { RouterModule, ChildrenOutletContexts } from '@angular/router';
+import { ChildrenOutletContexts } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -14,7 +15,7 @@ describe('NavComponent', () => {
     TestBed.configureTestingModule({
       declarations: [NavComponent],
       imports: [
-        RouterModule,
+        RouterTestingModule,
         NoopAnimationsModule,
         LayoutModule,
         MatButtonModule,

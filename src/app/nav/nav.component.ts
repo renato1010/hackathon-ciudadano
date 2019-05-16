@@ -6,13 +6,13 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
-  title: 'Ciudadano 2019';
+  title = 'Ciudadano 2019';
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 }

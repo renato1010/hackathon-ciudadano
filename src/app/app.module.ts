@@ -10,9 +10,10 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { AmplifyAngularModule, AmplifyModules, AmplifyService } from 'aws-amplify-angular';
 import { Auth } from 'aws-amplify';
 import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, PaginaNoEncontradaComponent],
+  declarations: [AppComponent, NavComponent, PaginaNoEncontradaComponent, InicioComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
