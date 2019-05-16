@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { AmplifyAngularModule, AmplifyModules, AmplifyService } from 'aws-amplify-angular';
+import Auth from '@aws-amplify/auth';
 
 @NgModule({
   declarations: [AppComponent, NavComponent],
@@ -19,9 +21,17 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    AmplifyAngularModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AmplifyService,
+      useFactory: () => {
+        return AmplifyModules({ Auth });
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

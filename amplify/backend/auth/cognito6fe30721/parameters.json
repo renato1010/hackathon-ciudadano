@@ -1,0 +1,52 @@
+{
+  "identityPoolName": "cognito6fe30721_identitypool_6fe30721",
+  "allowUnauthenticatedIdentities": false,
+  "lambdaLogPolicy": "cognito6fe30721_lambda_log_policy",
+  "openIdLambdaRoleName": "cognito6fe30721_openid_lambda_role",
+  "openIdRolePolicy": "cognito6fe30721_openid_pass_role_policy",
+  "openIdLambdaIAMPolicy": "cognito6fe30721_openid_lambda_iam_policy",
+  "openIdLogPolicy": "cognito6fe30721_openid_lambda_log_policy",
+  "userPoolName": "cognito6fe30721_userpool_6fe30721",
+  "autoVerifiedAttributes": ["email"],
+  "mfaConfiguration": "OFF",
+  "mfaTypes": ["SMS Text Message"],
+  "roleName": "cognito6fe30721_sns-role",
+  "roleExternalId": "cognito6fe30721_role_external_id",
+  "policyName": "cognito6fe30721-sns-policy",
+  "smsAuthenticationMessage": "Your authentication code is {####}",
+  "smsVerificationMessage": "Your verification code is {####}",
+  "emailVerificationSubject": "Your verification code",
+  "emailVerificationMessage": "Your verification code is {####}",
+  "defaultPasswordPolicy": false,
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": ["Requires Lowercase", "Requires Uppercase", "Requires Numbers", "Requires Symbols"],
+  "requiredAttributes": ["email", "phone_number"],
+  "userpoolClientName": "cognito6fe30721_app_client",
+  "userpoolClientGenerateSecret": true,
+  "userpoolClientRefreshTokenValidity": 30,
+  "userpoolClientWriteAttributes": ["email"],
+  "userpoolClientReadAttributes": ["email"],
+  "mfaLambdaRole": "cognito6fe30721_totp_lambda_role",
+  "mfaLambdaLogPolicy": "cognito6fe30721_totp_lambda_log_policy",
+  "mfaPassRolePolicy": "cognito6fe30721_totp_pass_role_policy",
+  "mfaLambdaIAMPolicy": "cognito6fe30721_totp_lambda_iam_policy",
+  "userpoolClientLambdaRole": "cognito6fe30721_userpoolclient_lambda_role",
+  "userpoolClientLogPolicy": "cognito6fe30721_userpoolclient_lambda_log_policy",
+  "userpoolClientLambdaPolicy": "cognito6fe30721_userpoolclient_lambda_iam_policy",
+  "userpoolClientSetAttributes": false,
+  "resourceName": "cognito6fe30721",
+  "authSelections": "identityPoolAndUserPool",
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "authRoleArn": {
+    "Fn::GetAtt": ["AuthRole", "Arn"]
+  },
+  "unauthRoleArn": {
+    "Fn::GetAtt": ["UnauthRole", "Arn"]
+  },
+  "useDefault": "default"
+}
