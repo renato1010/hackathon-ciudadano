@@ -28,6 +28,11 @@
       <div routerLink="/inicio" class="toolbar-title">
         <p class="toolbar-title-text">{{ title }}</p>
       </div>
+      <div class="toolbar-spacer"></div>
+      <div class="toolbar-right">
+        <span *ngIf="estaLogeado | async" (click)="logout()">Salir</span>
+        <span *ngIf="!(estaLogeado | async)" (click)="goToAuth()">Ingresar</span>
+      </div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

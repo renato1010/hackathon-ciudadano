@@ -1,0 +1,70 @@
+<div class="component-wrapper">
+  <!-- include a header maybe... !--->
+  <div class="form-wrapper">
+    <form [formGroup]="signUpForm">
+      <div class="form-fields-row">
+        <mat-form-field [floatLabel]="labelOption">
+          <input matInput type="text" placeholder="ingrese usuario" formControlName="username" />
+          <mat-error
+            *ngIf="username?.hasError('required') && (username?.touched || username?.dirty)"
+          >
+            Debe ingresar su usuario
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field [floatLabel]="labelOption">
+          <input
+            matInput
+            type="password"
+            placeholder="ingrese su password"
+            formControlName="password"
+          />
+          <mat-error
+            *ngIf="password?.hasError('required') && (username?.touched || username?.dirty)"
+          >
+            Debe ingresar su contraseña
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div formGroupName="attributes">
+        <div class="form-fields-row">
+          <mat-form-field [floatLabel]="labelOption">
+            <input matInput type="text" placeholder="ingrese email" formControlName="email" />
+            <mat-error *ngIf="email?.hasError('required') && (email?.touched || email?.dirty)">
+              Debe ingresar su email
+            </mat-error>
+            <mat-error *ngIf="email?.hasError('pattern') && (email?.touched || email?.dirty)">
+              Revise su formato de email
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field [floatLabel]="labelOption">
+            <input
+              matInput
+              type="text"
+              placeholder="ingrese telefono"
+              formControlName="phone_number"
+            />
+            <span matPrefix>(502)&nbsp;</span>
+            <mat-error *ngIf="phone?.hasError('required') && (phone?.touched || phone?.dirty)">
+              Debe ingresar su # de telefono
+            </mat-error>
+            <mat-error *ngIf="phone?.hasError('pattern') && (phone?.touched || phone?.dirty)">
+              Revise el formato del # de telefono
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="controls">
+        <button
+          mat-stroked-button
+          (click)="signUpSubmit()"
+          class="control-btn"
+          color="primary"
+          [disabled]="signUpForm.invalid"
+        >
+          Registrarse
+        </button>
+        <button mat-stroked-button (click)="signUpForm.reset()" class="control-btn">Borrar</button>
+      </div>
+    </form>
+  </div>
+</div>

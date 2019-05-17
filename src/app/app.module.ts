@@ -6,14 +6,30 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatFormFieldModule,
+  MatInputModule
+} from '@angular/material';
 import { AmplifyAngularModule, AmplifyModules, AmplifyService } from 'aws-amplify-angular';
 import { Auth } from 'aws-amplify';
 import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { AutenticacionComponent } from './autenticacion/autenticacion.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, PaginaNoEncontradaComponent, InicioComponent],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    PaginaNoEncontradaComponent,
+    InicioComponent,
+    AutenticacionComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,7 +40,10 @@ import { InicioComponent } from './inicio/inicio.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AmplifyAngularModule
+    AmplifyAngularModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     {

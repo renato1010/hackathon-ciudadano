@@ -28,3 +28,12 @@
     font-size: 1.9rem;
   }
 }
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+.toolbar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
