@@ -1,33 +1,101 @@
+@import '../../variables';
 .component-wrapper {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
-.form-wrapper {
+.signup-error {
+  color: $acento;
+  padding: 8px 15px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.signup-card {
+  max-width: 80vw;
+  margin: 10vh 0;
   display: flex;
   flex-direction: column;
-  min-width: 60%;
-  form {
-    .form-fields-row {
+  justify-content: center;
+  align-items: center;
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    form {
       width: 100%;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      .form-fields-row {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      mat-form-field {
+        padding: 0 15px;
+        width: 30vw;
+      }
+      .controls {
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        justify-content: space-between;
+        .control-btn {
+          max-width: 35vw;
+        }
+      }
     }
-    mat-form-field {
-      width: 45%;
+  }
+}
+/* signIn card */
+.signin-card {
+  @extend .signup-card;
+}
+/* verificacion de registro card */
+.verificacion-signup {
+  @extend .signup-card;
+  margin-top: 10vh;
+  max-width: 40vw;
+  .verification-row {
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* media querries */
+@media only screen and (min-width: 600px) and (max-width: 1199px) {
+  .signup-card {
+    .form-wrapper {
+      form {
+        .form-fields-row {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
     }
-    .controls {
-      display: flex;
-      flex-direction: row;
-      margin-top: 40px;
-      justify-content: space-between;
-      .control-btn {
-        width: 45%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .signup-card {
+    max-width: 50vw;
+    .form-wrapper {
+      form {
+        .form-fields-row {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        mat-form-field {
+          width: 15vw;
+        }
+        //.controls {
+        //  max-width: 15vw;
+        //}
       }
     }
   }

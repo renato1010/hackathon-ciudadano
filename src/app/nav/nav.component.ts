@@ -35,7 +35,10 @@ export class NavComponent {
       .then(() => console.log('re-direccionando al ingreso autorizado'));
   }
   logout() {
-    // logging out
-    console.log('logging out');
+    this.amplifyService
+      .auth()
+      .signOut({ global: true })
+      .then(() => console.log('logging out'))
+      .catch(err => console.log('error signing out: ', err.message));
   }
 }

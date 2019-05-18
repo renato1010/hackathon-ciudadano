@@ -8,3 +8,12 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+/* customizar material styles */
+
+/* botones inhabilitados muestran cursor not-allowed  */
+.mat-button[disabled],
+.mat-flat-button[disabled],
+.mat-icon-button[disabled],
+.mat-stroked-button[disabled] {
+  cursor: not-allowed !important;
+}

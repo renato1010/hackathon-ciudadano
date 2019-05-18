@@ -1,11 +1,19 @@
 import { LayoutModule } from '@angular/cdk/layout';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from '@angular/material';
 
 import { NavComponent } from './nav.component';
 import { ChildrenOutletContexts } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AmplifyModules, AmplifyService } from 'aws-amplify-angular';
+import { Auth } from 'aws-amplify';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -28,6 +36,12 @@ describe('NavComponent', () => {
         {
           provide: ChildrenOutletContexts,
           useClass: ChildrenOutletContexts
+        },
+        {
+          provide: AmplifyService,
+          useFactory: () => {
+            return AmplifyModules({ Auth });
+          }
         }
       ]
     }).compileComponents();

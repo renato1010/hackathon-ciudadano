@@ -30,8 +30,12 @@
       </div>
       <div class="toolbar-spacer"></div>
       <div class="toolbar-right">
-        <span *ngIf="estaLogeado | async" (click)="logout()">Salir</span>
-        <span *ngIf="!(estaLogeado | async)" (click)="goToAuth()">Ingresar</span>
+        <button *ngIf="estaLogeado | async" (click)="logout()" mat-button>
+          Salir
+        </button>
+        <button *ngIf="!(estaLogeado | async)" (click)="goToAuth()" mat-button>
+          Ingresar
+        </button>
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->

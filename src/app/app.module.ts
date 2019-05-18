@@ -13,7 +13,8 @@ import {
   MatIconModule,
   MatListModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatCardModule
 } from '@angular/material';
 import { AmplifyAngularModule, AmplifyModules, AmplifyService } from 'aws-amplify-angular';
 import { Auth } from 'aws-amplify';
@@ -43,7 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AmplifyAngularModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [
     {
