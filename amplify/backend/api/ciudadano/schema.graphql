@@ -1,0 +1,12 @@
+type Media @model {
+  id: ID!
+  titulo: String!
+  descripcion: String
+  url: String!
+  fecha: String!
+  likes: Int
+  dontlikes: Int
+  userId: String!
+  mediaType: String!
+  username: String!
+}

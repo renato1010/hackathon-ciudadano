@@ -17,7 +17,7 @@ import {
   MatCardModule
 } from '@angular/material';
 import { AmplifyAngularModule, AmplifyModules, AmplifyService } from 'aws-amplify-angular';
-import { Auth } from 'aws-amplify';
+import { Auth, Storage, API } from 'aws-amplify';
 import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AutenticacionComponent } from './autenticacion/autenticacion.component';
@@ -51,7 +51,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     {
       provide: AmplifyService,
       useFactory: () => {
-        return AmplifyModules({ Auth });
+        return AmplifyModules({ Auth, Storage, API });
       }
     }
   ],

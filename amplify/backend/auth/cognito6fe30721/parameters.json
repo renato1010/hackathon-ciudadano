@@ -1,6 +1,6 @@
 {
   "identityPoolName": "cognito6fe30721_identitypool_6fe30721",
-  "allowUnauthenticatedIdentities": false,
+  "allowUnauthenticatedIdentities": true,
   "lambdaLogPolicy": "cognito6fe30721_lambda_log_policy",
   "openIdLambdaRoleName": "cognito6fe30721_openid_lambda_role",
   "openIdRolePolicy": "cognito6fe30721_openid_pass_role_policy",
@@ -19,7 +19,12 @@
   "emailVerificationMessage": "Your verification code is {####}",
   "defaultPasswordPolicy": false,
   "passwordPolicyMinLength": 8,
-  "passwordPolicyCharacters": ["Requires Lowercase", "Requires Uppercase", "Requires Numbers", "Requires Symbols"],
+  "passwordPolicyCharacters": [
+    "Requires Lowercase",
+    "Requires Uppercase",
+    "Requires Numbers",
+    "Requires Symbols"
+  ],
   "requiredAttributes": ["email", "phone_number"],
   "userpoolClientName": "cognito6fe30721_app_client",
   "userpoolClientGenerateSecret": true,

@@ -10,7 +10,7 @@
     <mat-toolbar>Secciones</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/inicio" href="#">Inicio</a>
-      <a mat-list-item routerLink="/agregar-contenido" href="#">Enalce 2</a>
+      <a mat-list-item routerLink="/upload" href="#">Sube un Post</a>
       <a mat-list-item routerLink="/info" href="#">Enalce 3</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -39,6 +39,11 @@
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <!--
+    <pre>
+      User: {{ usuario | async | json }}
+    </pre>
+-->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

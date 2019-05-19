@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'ingresar', component: AutenticacionComponent },
+  { path: 'upload', loadChildren: './upload/upload.module#UploadModule' },
   { path: '**', component: PaginaNoEncontradaComponent }
 ];
 

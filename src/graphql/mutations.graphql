@@ -1,0 +1,43 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateMedia($input: CreateMediaInput!) {
+  createMedia(input: $input) {
+    id
+    titulo
+    descripcion
+    url
+    fecha
+    likes
+    dontlikes
+    userId
+    mediaType
+    username
+  }
+}
+mutation UpdateMedia($input: UpdateMediaInput!) {
+  updateMedia(input: $input) {
+    id
+    titulo
+    descripcion
+    url
+    fecha
+    likes
+    dontlikes
+    userId
+    mediaType
+    username
+  }
+}
+mutation DeleteMedia($input: DeleteMediaInput!) {
+  deleteMedia(input: $input) {
+    id
+    titulo
+    descripcion
+    url
+    fecha
+    likes
+    dontlikes
+    userId
+    mediaType
+    username
+  }
+}

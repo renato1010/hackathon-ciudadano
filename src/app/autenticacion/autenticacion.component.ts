@@ -155,14 +155,15 @@ export class AutenticacionComponent implements OnInit {
       .signIn(this.usernameSignIn.value, this.passwordSignIn.value)
       .then(user => {
         console.log('user sign-in: ', user);
-        if (user.challengeName === 'SMS_MFA' || user.challengeName === 'SOFTWARE_TOKEN_MFA') {
-          this.amplifyService.setAuthState({ state: 'confirmSignIn', user });
-        } else if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
-          this.amplifyService.setAuthState({ state: 'requireNewPassword', user });
-        } else {
-          this.amplifyService.setAuthState({ state: 'signedIn', user });
-          this.signInError = null;
-        }
+        // if (user.challengeName === 'SMS_MFA' || user.challengeName === 'SOFTWARE_TOKEN_MFA') {
+        //   this.amplifyService.setAuthState({ state: 'confirmSignIn', user });
+        // } else if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
+        //   this.amplifyService.setAuthState({ state: 'requireNewPassword', user });
+        // } else {
+        //   this.amplifyService.setAuthState({ state: 'signedIn', user });
+        //   this.signInError = null;
+        // }
+        this.amplifyService.setAuthState({ state: 'signedIn', user });
       })
       .catch(err => {
         this.signInError = err;

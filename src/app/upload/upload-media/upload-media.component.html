@@ -1,0 +1,82 @@
+<div class="component-wrapper">
+  <!-- card para formulario de upload -->
+  <mat-card class="upload-card">
+    <mat-card-title>Subir un Post</mat-card-title>
+    <mat-card-content>
+      <div class="form-wrapper">
+        <form [formGroup]="uploadMediaForm">
+          <div class="upload-file">
+            <mat-form-field [floatLabel]="labelOption">
+              <input
+                type="text"
+                matInput
+                placeholder="click/tap al boton de seleccionar archivo"
+                formControlName="file"
+              />
+              <mat-error *ngIf="file?.hasError('required')">
+                Debe seleccionar un archivo para su post
+              </mat-error>
+            </mat-form-field>
+            <button
+              style="height: 70px;"
+              (click)="fileInput.click()"
+              mat-raised-button
+              color="primary"
+            >
+              <i style="font-size: 42px;" class="material-icons">cloud_upload</i>
+            </button>
+            <input style="display: none;" (change)="onFileChange($event)" type="file" #fileInput />
+          </div>
+          <mat-form-field [floatLabel]="labelOption">
+            <input
+              matInput
+              type="text"
+              placeholder="ingrese el titulo del articulo"
+              formControlName="titulo"
+            />
+            <mat-error *ngIf="titulo?.hasError('required') && (titulo?.touched || titulo?.dirty)">
+              Debe ingresar un titulo para su post
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field [floatLabel]="labelOption">
+            <textarea
+              matInput
+              type="password"
+              placeholder="ingrese un descripcion para su articulo"
+              formControlName="descripcion"
+            ></textarea>
+          </mat-form-field>
+          <div class="mediatype-group">
+            <label>Que tipo de archivo estas subiendo?</label>
+            <mat-radio-group class="media-radio-group" formControlName="mediaType">
+              <mat-radio-button value="video">Video</mat-radio-button>
+              <mat-radio-button value="imagen">Imagen</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="controls">
+            <button
+              mat-stroked-button
+              (click)="onUploadMedia()"
+              class="control-btn"
+              color="primary"
+              [disabled]="uploadMediaForm.invalid"
+            >
+              Ingresar articulo
+            </button>
+            <button
+              style="margin-left: 24px;"
+              mat-stroked-button
+              (click)="uploadMediaForm.reset()"
+              class="control-btn"
+            >
+              Borrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+    <mat-card-footer style="width: 100%;">
+      <div *ngIf="uploadError" class="signup-error">Error: {{ uploadError.message }}</div>
+    </mat-card-footer>
+  </mat-card>
+</div>
