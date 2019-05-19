@@ -12,7 +12,10 @@ const awsmobile = {
   aws_appsync_region: 'us-east-2',
   aws_appsync_authenticationType: 'AMAZON_COGNITO_USER_POOLS',
   aws_user_files_s3_bucket: 'hackathon-dev',
-  aws_user_files_s3_bucket_region: 'us-east-2'
+  aws_user_files_s3_bucket_region: 'us-east-2',
+  aws_content_delivery_bucket: 'hack-ciudadano-app-dev',
+  aws_content_delivery_bucket_region: 'us-east-2',
+  aws_content_delivery_url: 'https://d18sa8q18ldj8f.cloudfront.net'
 };
 
 export default awsmobile;

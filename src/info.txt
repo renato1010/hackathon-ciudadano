@@ -1,1 +1,2 @@
 GraphQL endpoint: https://zvzxgmuy3ndklk7u4dqzuxxpgq.appsync-api.us-east-2.amazonaws.com/graphql
+host url: https://d18sa8q18ldj8f.cloudfront.net
